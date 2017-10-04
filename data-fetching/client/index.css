@@ -1,0 +1,39 @@
+.app_header {
+	padding: 6px;
+	line-height: 18px;
+	vertical-align: middle;
+	position: relative;
+}
+
+.logo {
+	text-decoration: none;
+	font-weight: bold;
+	color: red;
+	margin-right: 0.75em;
+}
+
+.link {
+	text-decoration: underline;
+}
+a {
+	color: blue;
+}
+a:visited {
+	color: blue;
+} /* visited link */
+
+.loader {
+	width: 20px;
+	height: 20px;
+	-webkit-animation: sweep 1.5s infinite linear;
+	border-radius: 100%;
+	border-bottom: 3px solid gray;
+	border-left: 3px solid #eeeeee;
+	border-right: 3px solid #eeeeee;
+	border-top: 3px solid #eeeeee;
+}
+@-webkit-keyframes sweep {
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
