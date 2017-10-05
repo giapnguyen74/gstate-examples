@@ -11,7 +11,7 @@ export function updateText(state, value) {
 	});
 }
 
-export function updateTextWithArchor(state, value) {
+export function updateTextWithAnchor(state, value) {
 	const item = {
 		value
 	};

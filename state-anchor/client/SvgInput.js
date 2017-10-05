@@ -1,10 +1,10 @@
 import React from "react";
 import gstate from "./gstate";
-import { updateText, updateTextWithArchor } from "./inputModule";
-const SvgInput = ({ x, y, state, value, isArchor }) => {
+import { updateText, updateTextWithAnchor } from "./inputModule";
+const SvgInput = ({ x, y, state, value, isAnchor }) => {
 	const onChange = evt => {
-		if (isArchor) {
-			updateTextWithArchor(state, evt.target.value);
+		if (isAnchor) {
+			updateTextWithAnchor(state, evt.target.value);
 		} else {
 			updateText(state, evt.target.value);
 		}
@@ -40,13 +40,13 @@ export default gstate(
 			value: 1
 		},
 		"#": {
-			archor: 1
+			anchor: 1
 		}
 	},
 	(props, data) => {
 		const value = data.item ? data.item.value : undefined;
-		const isArchor = data["#"] ? data["#"].archor : false;
+		const isAnchor = data["#"] ? data["#"].anchor : false;
 
-		return <SvgInput {...props} value={value} isArchor={isArchor} />;
+		return <SvgInput {...props} value={value} isAnchor={isAnchor} />;
 	}
 );
