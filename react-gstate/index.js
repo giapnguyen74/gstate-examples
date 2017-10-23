@@ -1,12 +1,11 @@
 import React from "react";
 
-const gstate = (query, renderer) => {
+const gstate = (query, renderer, options = {}) => {
 	class Renderer extends React.Component {
 		constructor(props) {
 			super(props);
 			this.state = {
-				data: undefined,
-				locals: {}
+				data: undefined
 			};
 
 			if (!props.state) {
@@ -14,11 +13,10 @@ const gstate = (query, renderer) => {
 					"Could not find state in props of gstate component. Please explicitly pass state as a prop to gstate component."
 				);
 			}
-			this._isMounted = false;
 		}
 
-		componentDidMount() {
-			this._isMounted = true;
+		refech() {
+			this._watcher && this._watcher();
 			this._watcher = this.props.state.watch(query, data => {
 				this.setState({
 					data: data
@@ -26,24 +24,17 @@ const gstate = (query, renderer) => {
 			});
 		}
 
+		componentDidMount() {
+			options.mounted && options.mounted.call(this);
+			this.refech();
+		}
+
 		componentWillUnmount() {
-			this._isMounted = false;
 			this._watcher && this._watcher();
 		}
 
-		setLocals(locals) {
-			if (this._isMounted) {
-				this.setState({ locals });
-			}
-		}
-
 		render() {
-			return renderer(
-				this.props,
-				this.state.data || {},
-				this.state.locals,
-				this.setLocals.bind(this)
-			);
+			return renderer(this.props, this.state.data, this);
 		}
 	}
 	return Renderer;

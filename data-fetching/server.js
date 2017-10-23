@@ -12,14 +12,16 @@ const state = new GState();
 router.get("/new", (req, res, next) => {
 	page.current = "/new";
 	const type = "newstories";
-	fetchStories(state, type).then(
-		() => {
-			serverRender(res, stories(type), { state, data: null });
-		},
-		err => {
-			serverRender(res);
-		}
-	);
+	fetchStories(state, type)
+		.then(
+			() => {
+				serverRender(res, stories(type), { state, data: null });
+			},
+			err => {
+				serverRender(res);
+			}
+		)
+		.catch(err => next(err));
 });
 
 router.use(function(req, res, next) {

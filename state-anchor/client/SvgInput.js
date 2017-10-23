@@ -1,5 +1,5 @@
 import React from "react";
-import gstate from "./gstate";
+import gstate from "../../react-gstate";
 import { updateText, updateTextWithAnchor } from "./inputModule";
 const SvgInput = ({ x, y, state, value, isAnchor }) => {
 	const onChange = evt => {
@@ -43,9 +43,9 @@ export default gstate(
 			anchor: 1
 		}
 	},
-	(props, data) => {
-		const value = data.item ? data.item.value : undefined;
-		const isAnchor = data["#"] ? data["#"].anchor : false;
+	(props, data = { item: {}, "#": { anchor: false } }) => {
+		const value = data.item.value;
+		const isAnchor = data["#"].anchor;
 
 		return <SvgInput {...props} value={value} isAnchor={isAnchor} />;
 	}

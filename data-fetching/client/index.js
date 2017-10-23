@@ -3,7 +3,7 @@ import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import page from "page";
-import GState from "../../../gstate/src";
+import GState from "gstate";
 
 import { stories, NotFound } from "./Pages";
 import { fetchStories } from "./data3";

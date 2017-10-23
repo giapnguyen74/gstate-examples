@@ -1,5 +1,5 @@
 import React from "react";
-import gstate from "./gstate";
+import gstate from "../../react-gstate";
 const SvgAnchor = ({ x, y, state, value, isAnchor }) => {
 	return (
 		<g>
@@ -146,9 +146,9 @@ export default gstate(
 		},
 		anchor: 1
 	},
-	(props, data) => {
-		const value = data.item ? data.item.value : undefined;
-		const isAnchor = data.anchor || false;
+	(props, data = { item: {}, anchor: false }) => {
+		const value = data.item && data.item.value;
+		const isAnchor = data.anchor;
 
 		return <SvgAnchor {...props} value={value} isAnchor={isAnchor} />;
 	}

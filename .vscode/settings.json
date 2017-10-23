@@ -1,0 +1,5 @@
+{
+	"eslint.enable": false,
+	"eslint.validate": ["javascript", "javascriptreact", "vue"],
+	"vetur.validation.template": true
+}

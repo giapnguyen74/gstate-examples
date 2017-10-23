@@ -29,7 +29,7 @@ module.exports = baseWebpackConfig => {
 
 			new FriendlyErrorsPlugin({
 				onErrors: function(severity, errors) {
-					//errors.forEach(error => console.error(error.message));
+					errors.forEach(error => console.error(error));
 				}
 			})
 		]
