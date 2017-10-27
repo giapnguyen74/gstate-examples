@@ -4,8 +4,12 @@ var webpack = require("webpack");
 
 var devConfig = require("./webpack.dev.conf");
 
-function run_dev_server(port, baseConfig, callback) {
-	var webpackConfig = devConfig(baseConfig);
+function run_dev_server(port, appPath, baseConfig, callback) {
+	if (!callback) {
+		(callback = baseConfig), (baseConfig = {});
+	}
+
+	var webpackConfig = devConfig(appPath, baseConfig);
 	var app = express();
 	var compiler = webpack(webpackConfig);
 

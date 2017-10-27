@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import AddTodo from "./AddTodo";
 import VisibleTodoList from "./VisibleTodoList";
 
-const GState = require("../../../gstate4/lib");
+const GState = require("../../../gstate");
 const state = new GState();
 
 const App = () => (

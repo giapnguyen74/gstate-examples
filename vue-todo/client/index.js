@@ -1,7 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 
-Vue.use(require("../../vue-gstate"));
+Vue.use(require("../../bindings/vue-gstate"));
 
 import GState from "gstate";
 const state = new GState();

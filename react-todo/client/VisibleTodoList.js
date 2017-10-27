@@ -1,6 +1,6 @@
 import React from "react";
 import TodoList from "./TodoList";
-import gstate from "../../react-gstate";
+import gstate from "../../bindings/react-gstate";
 import { toggleTodo } from "./actions";
 
 const getVisibleTodos = (todos = [], filter = "SHOW_ALL") => {

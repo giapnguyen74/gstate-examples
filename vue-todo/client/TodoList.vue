@@ -33,7 +33,6 @@ export default {
 	computed: {
 		todos(){
 			const data = this.$query.data;
-			console.log(data)
 			return getVisibleTodos(data.todos, data.filter)
 		},
 		

@@ -1,5 +1,5 @@
 import React from "react";
-import gstate from "../../react-gstate";
+import gstate from "../../bindings/react-gstate";
 import { updateText, updateTextWithAnchor } from "./inputModule";
 const SvgInput = ({ x, y, state, value, isAnchor }) => {
 	const onChange = evt => {

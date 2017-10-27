@@ -1,7 +1,7 @@
 import React from "react";
 import { setVisibilityFilter } from "./actions";
 import Link from "./Link";
-import gstate from "../../react-gstate";
+import gstate from "../../bindings/react-gstate";
 
 const FilterLink = gstate(
 	{

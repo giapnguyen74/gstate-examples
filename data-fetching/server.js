@@ -1,5 +1,5 @@
 const { renderToString } = require("react-dom/server");
-const GState = require("../../gstate/src");
+const GState = require("../../gstate");
 const router = require("express").Router();
 
 import React from "react";

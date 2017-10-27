@@ -1,5 +1,5 @@
 import React from "react";
-import gstate from "../../react-gstate";
+import gstate from "../../bindings/react-gstate";
 const SvgAnchor = ({ x, y, state, value, isAnchor }) => {
 	return (
 		<g>

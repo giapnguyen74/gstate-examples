@@ -1,5 +1,5 @@
 import App from "./App";
-import gstate from "./gstate";
+import gstate from "../../bindings/react-gstate";
 import React from "react";
 
 const Item = ({ item = {} }) => {
@@ -22,7 +22,7 @@ export const stories = type => {
 				_: 1
 			}
 		},
-		(props, data) => {
+		(props, data = {}) => {
 			return <Stories items={data[type]} loading={props.loading} />;
 		}
 	);
